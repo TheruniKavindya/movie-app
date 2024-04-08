@@ -1,4 +1,4 @@
-const fetcher = (url) => {
+const fetcher = (url) =>
   fetch(url, {
     method: "GET",
     headers: {
@@ -7,7 +7,6 @@ const fetcher = (url) => {
     },
   })
     .then((res) => res.json())
-    .then((res) => res.results);
-};
+    .then((res) => res);
 
 export default fetcher;

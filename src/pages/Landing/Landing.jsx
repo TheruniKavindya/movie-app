@@ -42,7 +42,7 @@ export default function Landing() {
       </p>
       <div className="flex flex-col md:flex-row justify-between gap-y-10 flex-wrap">
         <p className="text-white">{data}</p>
-        {data.map((movie) => (
+        {/* {data.results.map((movie) => (
           <MovieCard
             key={movie.id}
             title={movie.title}
@@ -50,7 +50,7 @@ export default function Landing() {
             year={new Date(movie.release_date).getFullYear()}
             imageUrl={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
           />
-        ))}
+        ))} */}
       </div>
 
       <p className="text-xl font-montserrat-regular text-movieClub-white my-3">

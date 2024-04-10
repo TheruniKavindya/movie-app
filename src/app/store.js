@@ -3,6 +3,7 @@ import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
 import storage from "redux-persist/lib/storage";
 import addMovieSlice from "../reducers/addMovieSlice";
+import movieDetailsSlice from "../reducers/movieDetailsSlice";
 
 const persistConfig = {
   key: "root",
@@ -12,6 +13,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   addMovie: addMovieSlice,
+  movieDetails: movieDetailsSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

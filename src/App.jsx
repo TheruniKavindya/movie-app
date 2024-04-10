@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Landing from "./pages/Landing/Landing";
 import store from "./app/store";
 import NavBar from "./lib/NavBar/NavBar";
+import MovieDetails from "./pages/MovieDetails/MovieDetails";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/details" element={<MovieDetails />} />
       </Routes>
     </Provider>
   );

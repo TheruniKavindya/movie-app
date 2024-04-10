@@ -7,6 +7,8 @@ import React from "react";
  * @property {string} imageUrl - image poster of the movie
  * @property {number} rating - rating of the movie
  * @property {number} year - year of the release
+ * @property {function} onClickHandler - onClick image card
+ *
  */
 
 /**
@@ -14,9 +16,12 @@ import React from "react";
  * @param {MovieCardProps} MovieCard - props
  * @returns {React.ReactElement}
  */
-function MovieCard({ title, imageUrl, rating, year }) {
+function MovieCard({ title, imageUrl, rating, year, onClickHandler }) {
   return (
-    <div className="w-full md:w-[40vw] lg:w-[20vw] h-[60vh] shadow-2xl bg-movieClub-white rounded-md ">
+    <div
+      onClick={onClickHandler}
+      className="w-full md:w-[40vw] lg:w-[20vw] h-[60vh] shadow-2xl bg-movieClub-white rounded-md cursor-pointer "
+    >
       <p className="font-montserrat-semi-bold text-xl flex justify-items-start text-movieClub-blue max-h-16 p-5">
         {title}
       </p>

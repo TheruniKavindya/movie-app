@@ -46,7 +46,7 @@ export default function Landing() {
         Most Rated
       </p>
       <div className="flex flex-col md:flex-row justify-between gap-y-10 flex-wrap">
-        {data.results.map((movie) => (
+        {/* {data.results.map((movie) => (
           <MovieCard
             key={movie.id}
             title={movie.title}
@@ -58,7 +58,7 @@ export default function Landing() {
               navigate("/details");
             }}
           />
-        ))}
+        ))} */}
       </div>
 
       <p className="text-xl font-montserrat-regular text-movieClub-white mt-32 mb-3">

@@ -13,7 +13,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/details" element={<MovieDetails />} />
+        <Route path="/details/:movieId" element={<MovieDetails />} />
       </Routes>
     </Provider>
   );

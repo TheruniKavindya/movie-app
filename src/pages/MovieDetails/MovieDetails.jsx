@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 export default function MovieDetails() {
-  const { id } = useSelector((state) => state.movieDetails);
+  const { movieId } = useParams();
 
   const [details, setDetails] = useState();
-  console.log(id);
+  console.log(movieId);
 
   // const { data } = useSWR(
   //   `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
@@ -14,13 +15,16 @@ export default function MovieDetails() {
 
   useEffect(() => {
     (async () => {
-      await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${import.meta.env.VITE_APP_ACCESS_TOKEN}`,
-        },
-      })
+      await fetch(
+        `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${import.meta.env.VITE_APP_ACCESS_TOKEN}`,
+          },
+        }
+      )
         .then((res) => res.json())
         .then((res) => {
           if (res) {
@@ -29,7 +33,7 @@ export default function MovieDetails() {
           }
         });
     })();
-  }, [id]);
+  }, [movieId]);
 
   // console.log(data);
   console.log(details);

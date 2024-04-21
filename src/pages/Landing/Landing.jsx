@@ -73,8 +73,8 @@ export default function Landing() {
             year={new Date(movie.release_date).getFullYear()}
             imageUrl={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
             onClickHandler={() => {
-              dispatch(setId(movie.id));
-              navigate("/details");
+              // dispatch(setId(movie.id));
+              navigate(`/details/${movie.id}`);
             }}
           />
         ))}
